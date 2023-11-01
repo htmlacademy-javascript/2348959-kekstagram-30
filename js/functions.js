@@ -10,3 +10,4 @@ const palindrom = (string) => {
   return string === reversed;
 }
 palindrom('tEn eT');
+

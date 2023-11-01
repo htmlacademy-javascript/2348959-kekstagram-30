@@ -1,13 +1,14 @@
-const validateForm = (string, lengthMax) => (string.length <= lengthMax);
-validateForm ('проверяемая строка', 21);
+const convertToMins = (time) => {
+  const components = time.split (':');
 
-const palindrom = (string) => {
-  string = string.replaceAll(' ', '').toLowerCase();
-  let reversed = '';
-  for (let i = string.length - 1; i >= 0; i--) {
-    reversed += string[i];
-  }
-  return string === reversed;
+  return parseInt (components[0], 10) * 60 + parseInt (components[1], 10);
 }
-palindrom('tEn eT');
 
+const checkMeetTime = (begin, end, start, long) => {
+  const beginWorkday = convertToMins(begin);
+  const endWorkday = convertToMins(end);
+  const startMeet = convertToMins(start);
+  const longMeet = parseInt (long, 10);
+
+  return beginWorkday <= startMeet && startMeet < endWorkday && (longMeet + startMeet) <= endWorkday;
+};

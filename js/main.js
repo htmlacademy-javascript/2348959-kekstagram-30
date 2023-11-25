@@ -1,3 +1,5 @@
-import './data.js';
-import './util.js';
-import './functions.js';
+import { renderMiniatures } from './miniatures.js';
+
+renderMiniatures();
+
+console.log('все скрипты сработали');

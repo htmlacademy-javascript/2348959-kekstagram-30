@@ -5,4 +5,4 @@ const getRandomizerFromTo = (a, b) => {
   return Math.floor(result);
 };
 
-export {getRandomizerFromTo};
+export { getRandomizerFromTo };
